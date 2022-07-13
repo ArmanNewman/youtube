@@ -28,11 +28,11 @@ if __name__ == "__main__":
     t_elapsed_parallel = time.perf_counter() - t1_parallel
     print(f'Parallel version time elapsed: {t_elapsed_parallel}')
 
-    # Time Serialized execution
-    # t1_serial = time.perf_counter()
-    # results_serial = [copyrights_scraper.get_license(url) for url in urls]
-    # t_elapsed_serial = time.perf_counter() - t1_serial
-    # print(f'Serial version time elapsed: {t_elapsed_serial}')
+    # Time Synchronous execution
+    t1_serial = time.perf_counter()
+    results_serial = [copyrights_scraper.get_license(url) for url in urls]
+    t_elapsed_serial = time.perf_counter() - t1_serial
+    print(f'Serial version time elapsed: {t_elapsed_serial}')
 
     for r in results:
         print(r)
